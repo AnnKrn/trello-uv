@@ -1,163 +1,363 @@
 /*Estilo general de body*/
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto Slab', serif;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Slab', serif;
 }
+
+
 /*color, estilo y posicionamiento de barra de navegación*/
-nav{
-  background-color: #026aa7;
-  height: 50px;
-  display: inline-block;
-  width: 100%;
+
+nav {
+    background-color: #026aa7;
+    height: 50px;
+    display: inline-block;
+    width: 100%;
 }
-li{
-  font-size: 15px;
-  display: inline-block;
-  list-style: none;
-  padding: 3px;
+
+li {
+    font-size: 15px;
+    display: inline-block;
+    list-style: none;
+    padding: 3px;
 }
+
+
 /*color, estilo y posicionamiento de contenido principal*/
-#main-child{
-  background-color: #1d8dc2;
-  height: 585px;
-  margin-top: -18px;
-  padding: 0;
-  width: 100%;
+
+#main-child {
+    background-color: #1d8dc2;
+    height: 585px;
+    margin-top: -18px;
+    padding: 0;
+    width: 100%;
 }
+
 #add-name-list {
+    background-color: #026aa7;
+    border: none;
+    border-radius: 5%;
+    color: #FFFFFF;
+    font-style: normal;
+    height: 35px;
+    width: 255px;
     z-index: 1;
-    background: #006BA3;
 }
+
+
 /*margenes de botón de Tableros, input de texto y titilo de aplicación*/
-.main-left{
-  margin-top: 10px;
-  margin-left: 10px;
+
+.main-left {
+    margin-top: 10px;
+    margin-left: 10px;
 }
-.tableros{
-  background-color: #68a3c4;
-  border: none;
-  border-radius: 5%;
-  height: 30px;
+
+.tableros {
+    background-color: #68a3c4;
+    border: none;
+    border-radius: 5%;
+    height: 30px;
 }
-.tableros-img-text{
-  font-size: 15px;
-  font-weight: 550;
-  color: #FFFFFF;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
+
+.tableros-img-text {
+    font-size: 15px;
+    font-weight: 550;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
 }
-.main-search{
-  background-color: #68a3c4;
-  border: none;
-  border-radius: 5%;
-  height: 30px;
-  padding: 0;
+
+.main-search {
+    background-color: #68a3c4;
+    border: none;
+    height: 30px;
+    padding: 0;
 }
-.title-trello{
-  margin-top: -35px;
-  text-align: center;
+
+.button-search {
+    background-color: #68a3c4;
+    border: none;
+    border-radius: 10%;
+    height: 30px;
+    margin: 0;
+    padding: 0;
 }
+
+.title-trello {
+    margin-top: -35px;
+    text-align: center;
+}
+
+
 /*posicionamiento margenes de botones de usabilidad*/
-.main-rigth{
-  float: right;
-  margin-top: -30px;
-  margin-left: -30px;
+
+.main-rigth {
+    float: right;
+    margin-top: -50px;
+    margin-left: -30px;
+    clear: none;
 }
+
+
 /*posicionamiento lista*/
-.main-child-left{
-  margin: 16px 1px;
-  padding: 3px;
+
+.main-child-left {
+    margin: 16px 1px;
+    padding: 3px;
 }
+
+
 /*tamaño de letra de nombre del tablero*/
-.name-tablero{
-  font-size: 20px;
-  font-weight: 600;
-  padding-right: 15px;
+
+.name-tablero {
+    font-size: 20px;
+    font-weight: 600;
+    padding-right: 15px;
 }
+
+
 /*flotar elemento a la derecha*/
-.main-child-righ{
-  float: right;
-  text-decoration: underline;
+
+.main-child-righ {
+    float: right;
+    text-decoration: underline;
 }
+
 .box-list {
     height: 200px;
     width: 270px;
     z-index: 0;
 }
+
 .block {
+    background-color: #FFFFFF;
+    border: none;
+    color: black;
+    font-style: normal;
     display: block;
+    z-index: 1;
 }
+
 .none {
     display: none;
 }
-/*posicionamiento de botones en barra de navegacion*/
-nav .main-rigth button{
-  display: inline-block;
-  height: 30px;
-  width: 30px;
-  padding-left: 5px;
-}
-/* decoracion y posicionamiento de imagen dentro del botón en barra de navegación*/
-nav section button a img{
-  padding-right: 5px;
-  margin: 0;
-}
-/*decoracion de link*/
-main ul li a{
-  color: #FFFFFF;
-  text-decoration: none;
+
+.nonex {
+    display: none;
 }
 
-/*Karla añade de aqui hacia abajo*/
+
 /*clase color de letra. uso en inputs*/
+
 .white-letter {
-  color: white;
+    color: white;
 }
+
 
 /*clase para dar color de letra blanco a todos los placeholder*/
+
 ::placeholder {
-  color: white;
+    color: white;
 }
 
-/*clase para dar tamaño y color a TITULO impresO*/
+
+/*clase para dar tamaño y color a TITULO impreso*/
+
 .title-card-size {
-  height: auto;
-  max-width: 300px;
-  background: #E2E4E6;
-  max-height: max-content;
-  border-radius: 5px;
-  margin-bottom: 0;
-  margin-left: 10px;
-  margin-right: 10px;
+    height: auto;
+    max-width: 300px;
+    background: #E2E4E6;
+    max-height: max-content;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
+
 
 /*esta clase hace que el texto se ajuste al ancho del div y y el height se adapta al tamaño del contenido*/
+
 .title-text-size {
-  margin: 0;
-  max-width: 300px;
-  max-height: max-content;
-  word-wrap: break-word;
-  padding: 10px 10px;
+    margin: 0;
+    max-width: 300px;
+    max-height: max-content;
+    word-wrap: break-word;
+    padding: 10px 10px;
 }
 
+/*Añadir cambio!!! en card-size*/
 /*clase para dar tamaño y color a tarjeta impresa*/
+
 .card-size {
-  height: auto;
-  max-width: 300px;
-  background: white;
-  max-height: max-content;
-  border-radius: 2px;
-  margin-top: 0;
-  margin-left: 10px;
-  margin-right: 10px;
+    height: auto;
+    max-width: 300px;
+    background: white;
+    max-height: max-content;
+    border-radius: 2px;
+    margin-bottom: 5px;
+    margin-top: 0;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .text-size {
-  margin: 0;
-  max-width: 300px;
-  max-height: max-content;
-  word-wrap: break-word;
-  padding: 10px 10px;
+    margin: 0;
+    max-width: 300px;
+    max-height: max-content;
+    word-wrap: break-word;
+    padding: 10px 10px;
+}
+
+/*Añadir!!! clase estilo de imputs falta HOOVER*/
+.task-input-style {
+  margin: 10px 10px;
+  background-color: #026aa7;
+  border: none;
+  border-radius: 5%;
+  color: #FFFFFF;
+  font-style: normal;
+  height: 35px;
+  width: 255px;
+  z-index: 1;
+}
+
+/*Añadir clase imputs hoover */
+.task-input-style:hover {
+    background-color: #0a5784;
+}
+
+/*Añadir clase de estilo para el boton de eliminar tarea*/
+.delet-task-button-style {
+  border: none;
+  border-radius: 5px;
+  float: right;
+  background: none;
+  margin: 10px 10px;
+  transition: 10ms ease;
+}
+
+/*Añadir clase de estilo para el boton de eliminar tarea hoover*/
+.delet-task-button-style:hover {
+  border: 1px solid #797a7a;
+  color: white;
+  background: #797a7a;
+}
+
+#save-button {
+    background: #5aac44;
+    border: none;
+    border-radius: 10%;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 600;
+    height: 35px;
+    margin: 5px;
+    width: 75px;
+}
+
+
+/*decoracion de link*/
+
+main ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+
+/* decoracion y posicionamiento de imagen dentro del botón en barra de navegación*/
+
+nav section button a {
+    color: white;
+    height: 23px;
+    margin: 0;
+    text-decoration: none;
+    width: 22px;
+}
+
+
+/*posicionamiento de botones en barra de navegacion*/
+
+nav .main-rigth button {
+    background: #4D96BB;
+    border: none;
+    border-radius: 5px;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+}
+
+main div .inline-block {
+    background: #5aac44;
+    border: none;
+    border-radius: 10%;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 600;
+    height: 35px;
+    margin: 5px;
+    width: 75px;
+}
+
+main div .nonex {
+    color: #797a7a;
+    background-color: inherit;
+    border: none;
+    height: 35px;
+    width: 15px;
+}
+ /*Cambio de color!! Añadir*/
+main div .close {
+    color: black;
+    background-color: inherit;
+    border: none;
+    height: 35px;
+    width: 15px;
+}
+
+main div {
+    margin: 15px;
+}
+
+#save-button:hover {
+    background-color: #519839;
+}
+
+#x-button:hover {
+    color: black;
+}
+
+#add-name-list:hover {
+    background-color: #0a5784;
+}
+
+.tableros:hover {
+    background-color: #147aa7;
+}
+
+main div .none:hover {
+    /*no funciona el hover, revisar*/
+    background-color: #519839;
+}
+
+main div .nonex:hover {
+    color: black;
+}
+
+nav .main-rigth button:hover {
+    background-color: #147aa7;
+}
+
+main ul li a:hover {
+    background-color: #147aa7;
+}
+
+main div .inline-block {
+    background-color: #519839;
+}
+
+/*cambio de color!! Añadir No sirve Hoover*/
+main div .close:hover {
+    color: #797a7a;
 }

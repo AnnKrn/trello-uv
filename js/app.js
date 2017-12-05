@@ -6,68 +6,122 @@ var xButton = document.getElementById('x-button');
 var taskInput = document.createElement('input');
 var taskInputId = document.getElementById('task-input')
 
-//
-
+//Enfocando placeholder y dandole nombre a la funcion afterFocus
 nameListInput.addEventListener('focus', afterFocus);
-saveButton.addEventListener('click', saveNameList);
+//agregando evento click al boton de Añadir a la funcion saveNameList
+saveButton.addEventListener('mousedown', saveNameList);
+//Evento al boton X que hara la funcion prevention
 xButton.addEventListener('click', prevention)
-    //nameListInput.addEventListener('blur', noFocus)
+nameListInput.addEventListener('blur', noFocus)
 
 
+
+//funcion para convertir los ID taskBox en clase y remplazando saveButton - xButton por otro nombre de clases
 function afterFocus(e) {
     e.preventDefault();
     taskBox.classList.add('box-list-focus')
     saveButton.classList.replace('none', 'inline-block');
-    xButton.classList.replace('none', 'inline-block');
+    xButton.classList.replace('nonex', 'close'); //cambie la clase inline-block a close
+    xButton.classList.remove('none')
 }
 
+xButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    this.classList.add('none');
+    saveButton.classList.add('none');
+})
+
+//
 function saveNameList(e) {
     e.preventDefault();
-    //Añade var listContainer
-    //Div donde irá el texto de la tarjeta
+    //creando elemento de p y al nodo de texto agregarle un valor
     var listContainer = document.createElement('div');
     var listTitle = document.createElement('p');
-    var listTitleText = document.createTextNode(nameListInput.value);
-    //añade siguientes hasta taskBox.appendChild(listContainer);. se unen p a div
+    var listTitleText = document.createTextNode(nameListInput.value)
     listContainer.appendChild(listTitle);
+    //añadiendo p a listTitleText (nodo de texto)
     listTitle.appendChild(listTitleText);
-    //crear clase a div Container
     listContainer.classList.add('title-card-size');
     //crear clase a p dentro de Container
     listTitle.classList.add('title-text-size');
-    //se añade el div Container al div textBox
+    //en el div agredando el elemento p
     taskBox.appendChild(listContainer);
+    //elimina add-name-list que se encuentra en la variable nameListInput
     taskBox.removeChild(nameListInput);
-    this.classList.replace('inline-block', 'none');
-    xButton.classList.replace('inline-block', 'none')
+    //se remplaza el ID saveButton a la clase inline-block, none
+    saveButton.classList.replace('inline-block', 'none');
+    //se remplaza el ID por las clases close y nonex
+    xButton.classList.replace('close', 'nonex') //cambie la clase inline-block a close
+        //Agregando al elemento taskInput Input los atributos ID de nombre task-input
     taskInput.setAttribute('id', 'task-input');
+    //Agregando al elemento taskInput Input los atributos type=text
     taskInput.setAttribute('type', 'text');
+    //Agregando al elemento taskInput Input los atributos placeholder=Añadir una tarjeta
     taskInput.setAttribute('placeholder', 'Añadir una tarjeta');
+    //Agregando al elemento taskInput la clase block
     taskInput.classList.add('block')
-    taskBox.appendChild(taskInput);
-    var addButton = document.createElement('button');
-    var addButtonText = document.createTextNode('Añadir');
-    addButton.appendChild(addButtonText);
-    taskBox.appendChild(addButton);
-    var xxButton = document.createElement('button');
-    var xxButtonText = document.createTextNode('X');
-    xxButton.appendChild(xxButtonText);
-    taskBox.appendChild(xxButton);
-    addButton.classList.add('none');
-    xxButton.classList.add('none');
 
-    addButton.addEventListener('click', function(e) {
+    //Añadir!!! añade clases de estilo alosimputs de tarea
+    taskInput.classList.add('task-input-style')
+    taskInput.classList.add('task-input-style:hover')
+
+        //Agregar al div task-box taskInput
+    taskBox.appendChild(taskInput);
+    //nombrando variable que crea un elemento boton
+    var addButton = document.createElement('button');
+    //creando variable que añada un nodo de texto
+    var addButtonText = document.createTextNode('Añadir');
+    //añadiendo el nodo de texto al elemento button
+    addButton.appendChild(addButtonText);
+    //añadiendo al DIV el elemento button con el nodo de texto añadir
+    taskBox.appendChild(addButton);
+    //creando variable para crear un button
+    var xxButton = document.createElement('button');
+    //creando un nodo de texto X
+    var xxButtonText = document.createTextNode('X');
+    //añadiendo al elemento button el nodo de texto x
+    xxButton.appendChild(xxButtonText);
+    //añadiendo al div task-box el boton
+    taskBox.appendChild(xxButton);
+    //agregando el button la clase none
+    addButton.classList.add('none');
+    //agregando el button la clase close
+    xxButton.classList.add('close'); //cambie la clase none a close
+    xxButton.classList.add('none')
+    taskInput.addEventListener('blur', noFocusTask)
+
+    function noFocusTask(e) {
         e.preventDefault()
-        //Añade var nameContainer. crear div y meterle la variable nameTask
+        addButton.classList.add('none')
+        xxButton.classList.add('none')
+    }
+    xxButton.addEventListener('click', function(e) {
+        e.preventDefault()
+        this.classList.add('none')
+        addButton.classList.add('none')
+    })
+    addButton.addEventListener('mousedown', function(e) {
+        e.preventDefault()
         var nameContainer = document.createElement('div');
         var nameTask = document.createElement('p')
         var nameTaskText = document.createTextNode(taskInput.value);
-        //añade de aqui hasta nameTask.classList.add('text-size');.se unen elementos
+        var xxxButton = document.createElement('button')
+        var xxxButtonText = document.createTextNode('x')
+        xxxButton.appendChild(xxxButtonText)
+        nameContainer.appendChild(xxxButton)
+        //Añadir!! crear clase de estilo de boton, elimitar tarea
+        xxxButton.classList.add('delet-task-button-style');
+        //Añadir!! crear clase de estilo de boton hoover, elimitar tarea
+        xxxButton.classList.add('delet-task-button-style:hover');
+
+        xxxButton.addEventListener('click', function(e) {
+                this.parentNode.remove();
+            })
+            //añade de aqui hasta nameTask.classList.add('text-size');.se unen elementos
         nameContainer.appendChild(nameTask);
         nameTask.appendChild(nameTaskText);
         //taskBox.prepend(nameTask);
         taskBox.insertBefore(nameContainer, taskInput) //si se rompe es por esto
-        //clases de estilo de div tarjetas
         nameContainer.classList.add('card-size');
         nameTask.classList.add('text-size');
         addButton.classList.add('none');
@@ -78,18 +132,18 @@ function saveNameList(e) {
     taskInput.addEventListener('focus', function(e) {
         e.preventDefault();
         addButton.classList.replace('none', 'inline-block');
-        xxButton.classList.replace('none', 'inline-block')
+        xxButton.classList.replace('none', 'close') //cambie la clase inline-block a close
     })
 
 }
 
 
-/*function noFocus(e) {
+function noFocus(e) {
     e.preventDefault();
-    taskBox.classList.remove('box-list-focus');
-    saveButton.classList.replace('block', 'none');
-    xButton.classList.replace('inline-block', 'none');
-}*/
+    saveButton.classList.add('none')
+    xButton.classList.add('none')
+}
+
 
 function prevention(e) {
     e.preventDefault();
